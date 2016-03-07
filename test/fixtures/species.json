@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "scientificName": "Ammodramus maritimus macgillivraii",
+    "commonName": "MacGillivray's Seaside sparrow",
+    "taxon": "Bird",
+    "leadOffice": "Charleston",
+    "range": [
+      "North Carolina",
+      "Florida",
+      "South Carolina",
+      "Georgia"
+    ],
+    "status": [
+      {
+        "name": "Petitioned",
+        "date": "Mon Apr 19 2010 20:00:00 GMT-0400 (EDT)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "scientificName": "Etheostoma tippecanoe",
+    "commonName": "Tippecanoe darter",
+    "taxon": "Fish",
+    "leadOffice": "Region 5",
+    "range": [
+      "Pennsylvania",
+      "Ohio",
+      "Indiana",
+      "West Virginia",
+      "Tennessee",
+      "Kentucky"
+    ],
+    "status": [
+      {
+        "name": "Petitioned",
+        "date": "Mon Apr 19 2010 20:00:00 GMT-0400 (EDT)"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "scientificName": "Lampsilis rafinesqueana",
+    "commonName": "Neosho mucket",
+    "taxon": "Mussel",
+    "leadOffice": "Arkansas",
+    "range": [
+      "Arkansas",
+      "Kansas",
+      "Missouri",
+      "Oklahoma"
+    ],
+    "status": [
+      {
+        "name": "Listed Endangered",
+        "date": "Mon Sep 16 2013 20:00:00 GMT-0400 (EDT)"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "scientificName": "Chromolaena frustrata",
+    "commonName": "Cape Sable thoroughwort",
+    "taxon": "Vascular Plant",
+    "leadOffice": "South Florida",
+    "range": [
+      "Florida"
+    ],
+    "status": [
+      {
+        "name": "Listed Endangered",
+        "date": "Wed Oct 23 2013 20:00:00 GMT-0400 (EDT)"
+      }
+    ]
+  }
+]

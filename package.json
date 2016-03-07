@@ -1,0 +1,49 @@
+{
+  "name": "Finder",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A RESTful API of At-Risk Species",
+  "keywords": [
+    "At-risk species",
+    "Government",
+    "USFWS",
+    "U.S. Fish and Wildlife Service"
+  ],
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "googleapis": "^2.1.6",
+    "include-all": "^0.1.6",
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.10.3",
+    "rc": "~1.1.6",
+    "request": "^2.58.0",
+    "sails": "^0.12.1",
+    "sails-mongo": "^0.12.0"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js",
+    "test": "mocha -R spec -b --recursive -t 5000",
+    "coverage": "istanbul cover _mocha -- -u exports -R spec --recursive -t 5000",
+    "lint": "jshint api/**/*.js test/**/*.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rhewitt22/finder-2.0.git"
+  },
+  "author": "Roy Hewitt",
+  "license": "Public Domain",
+  "devDependencies": {
+    "barrels": "^1.5.0",
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.0.1",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.2.5",
+    "sails-memory": "^0.10.5",
+    "supertest": "^1.0.1"
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "googleId": "111676112618526079050",
+    "email": "roy_hewitt@fws.gov",
+    "accountType": "admin",
+    "photo": "https://lh6.googleusercontent.com/-v3Z5XZ2x4-4/AAAAAAAAAAI/AAAAAAAAAAA/6vS6DDaQppE/photo.jpg",
+    "phone": "404 679 7306",
+    "job": "Regional Web Dude"
+  },
+  {
+    "id": 2,
+    "googleId": "101876441603782187907",
+    "email": "royhewitt07@gmail.com",
+    "accountType": "viewer"
+  }
+]
