@@ -474,7 +474,7 @@ module.exports = [
     "scientificName": "Eumeces egregius insularis",
     "commonName": "Cedar Key mole skink",
     "taxon": "Reptile",
-    "leadOffice": "Jacksonville",
+    "leadOffice": "South Florida",
     "ecos": "C050",
     "range": [
       "Florida"
@@ -886,6 +886,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -1558,7 +1563,7 @@ module.exports = [
     "scientificName": "Cambarus bouchardi",
     "commonName": "Big South Fork crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Frankfort",
     "ecos": "K01O",
     "range": [
       "Tennessee",
@@ -1607,7 +1612,7 @@ module.exports = [
     "scientificName": "Cambarus extraneus",
     "commonName": "Chickamauga crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K01P",
     "range": [
       "Georgia",
@@ -1631,7 +1636,7 @@ module.exports = [
     "scientificName": "Cambarus cymatilis",
     "commonName": "Conasauga Blue burrower",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06C",
     "range": [
       "Georgia",
@@ -1655,7 +1660,7 @@ module.exports = [
     "scientificName": "Cambarus coosawattae",
     "commonName": "Coosawattae crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06A",
     "range": [
       "Georgia"
@@ -1678,7 +1683,7 @@ module.exports = [
     "scientificName": "Cambarus cracens",
     "commonName": "Slenderclaw crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Daphne",
     "ecos": "K06B",
     "range": [
       "Alabama"
@@ -1748,7 +1753,7 @@ module.exports = [
     "scientificName": "Cambarus fasciatus",
     "commonName": "Etowah crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06F",
     "range": [
       "Georgia"
@@ -1794,7 +1799,7 @@ module.exports = [
     "scientificName": "Cambarus jonesi",
     "commonName": "Alabama Cave crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Daphne",
     "ecos": "K06I",
     "range": [
       "Alabama"
@@ -1888,7 +1893,7 @@ module.exports = [
     "scientificName": "Cambarus speciosus",
     "commonName": "Beautiful crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06M",
     "range": [
       "Georgia"
@@ -1911,7 +1916,7 @@ module.exports = [
     "scientificName": "Cambarus spicatus",
     "commonName": "Little River crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Charleston",
     "ecos": "K02X",
     "range": [
       "South Carolina",
@@ -1935,7 +1940,7 @@ module.exports = [
     "scientificName": "Cambarus strigosus",
     "commonName": "Lean crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06N",
     "range": [
       "Georgia"
@@ -2002,7 +2007,7 @@ module.exports = [
   },
   {
     "scientificName": "Carex impressinervia",
-    "commonName": "Ravine sedge",
+    "commonName": "Impressed-nerved sedge",
     "taxon": "Vascular Plant",
     "leadOffice": "Jackson",
     "ecos": "Q30I",
@@ -2192,6 +2197,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -2222,7 +2232,7 @@ module.exports = [
     "scientificName": "Distocambarus carlsoni",
     "commonName": "Mimic crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Charleston",
     "ecos": "K06Q",
     "range": [
       "South Carolina"
@@ -2245,7 +2255,7 @@ module.exports = [
     "scientificName": "Distocambarus devexus",
     "commonName": "Broad River Burrowing crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06R",
     "range": [
       "Georgia"
@@ -2268,7 +2278,7 @@ module.exports = [
     "scientificName": "Distocambarus youngineri",
     "commonName": "Saluda crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Charleston",
     "ecos": "K030",
     "range": [
       "South Carolina"
@@ -2355,6 +2365,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -2378,6 +2393,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -2586,6 +2606,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -2702,6 +2727,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -3064,6 +3094,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -3646,7 +3681,7 @@ module.exports = [
     "scientificName": "Fissidens hallii",
     "commonName": "Hall's pocket moss",
     "taxon": "Non-Vascular Plant",
-    "leadOffice": "Asheville",
+    "leadOffice": "Lafayette",
     "ecos": "S02U",
     "range": [
       "Florida",
@@ -3992,7 +4027,7 @@ module.exports = [
     "scientificName": "Graptemys nigrinoda",
     "commonName": "Black-knobbed Map turtle",
     "taxon": "Reptile",
-    "leadOffice": "Jackson",
+    "leadOffice": "Daphne",
     "ecos": "C01V",
     "range": [
       "Alabama",
@@ -4588,6 +4623,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -4781,6 +4821,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -5362,7 +5407,7 @@ module.exports = [
     "scientificName": "Noturus gladiator",
     "commonName": "Piebald madtom",
     "taxon": "Fish",
-    "leadOffice": "Cookeville",
+    "leadOffice": "Jackson",
     "ecos": "E0CT",
     "range": [
       "Mississippi",
@@ -5866,7 +5911,7 @@ module.exports = [
     "scientificName": "Orconectes packardi",
     "commonName": "Appalachian Cave crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Frankfort",
     "ecos": "K074",
     "range": [
       "Kentucky"
@@ -5889,7 +5934,7 @@ module.exports = [
     "scientificName": "Orconectes sheltae",
     "commonName": "Shelta cave crayfish",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Daphne",
     "ecos": "K03V",
     "range": [
       "Alabama"
@@ -6403,6 +6448,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -7103,6 +7153,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -7151,6 +7206,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -7278,7 +7338,7 @@ module.exports = [
   },
   {
     "scientificName": "Rhynchospora crinipes",
-    "commonName": "Hairy-peduncled beaked-rush",
+    "commonName": "Hairy peduncled beakrush",
     "taxon": "Vascular Plant",
     "leadOffice": "Jackson",
     "ecos": "Q1LH",
@@ -7795,7 +7855,7 @@ module.exports = [
     ]
   },
   {
-    "scientificName": "Toxolasma lividus",
+    "scientificName": "Toxolasma lividum",
     "commonName": "Purple lilliput",
     "taxon": "Mussel",
     "leadOffice": "Asheville",
@@ -8147,7 +8207,7 @@ module.exports = [
     "scientificName": "Cambarus harti",
     "commonName": "Piedmont blue burrower",
     "taxon": "Crayfish",
-    "leadOffice": "Jackson",
+    "leadOffice": "Athens",
     "ecos": "K06G",
     "range": [
       "Georgia"
@@ -8274,7 +8334,7 @@ module.exports = [
     "scientificName": "Gyrinophilus gulolineatus",
     "commonName": "Berry cave salamander",
     "taxon": "Amphibian",
-    "leadOffice": "Region 4",
+    "leadOffice": "Cookeville",
     "ecos": "D03B",
     "range": [
       "Tennessee"
@@ -10431,7 +10491,8 @@ module.exports = [
       "North Carolina",
       "Alabama",
       "Mississippi",
-      "Illinois"
+      "Illinois",
+      "Kentucky"
     ],
     "status": [
       {
@@ -11025,6 +11086,11 @@ module.exports = [
         "name": "Substantial 90-day Finding",
         "url": "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
         "date": "2011-09-27"
+      },
+      {
+        "name": "Petition Withdrawn",
+        "url": "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+        "date": "2015-12-17"
       }
     ]
   },
@@ -11161,7 +11227,7 @@ module.exports = [
     "scientificName": "Percina macrocephala",
     "commonName": "Longhead darter",
     "taxon": "Fish",
-    "leadOffice": "Frankfort",
+    "leadOffice": "Region 5",
     "ecos": "E018",
     "range": [
       "Kentucky",
