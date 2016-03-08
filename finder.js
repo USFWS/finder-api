@@ -191,7 +191,7 @@ module.exports = [
         "date": "2012-07-11"
       },
       {
-        "name": "90-day Substantial Finding",
+        "name": "Substantial 90-day Finding",
         "url": "http://www.gpo.gov/fdsys/pkg/FR-2015-09-18/pdf/2015-23315.pdf",
         "date": "2015-09-18"
       }
@@ -217,7 +217,7 @@ module.exports = [
         "date": "2012-07-11"
       },
       {
-        "name": "90-day Substantial Finding",
+        "name": "Substantial 90-day Finding",
         "url": "http://www.gpo.gov/fdsys/pkg/FR-2015-09-18/pdf/2015-23315.pdf",
         "date": "2015-09-18"
       }
@@ -328,7 +328,7 @@ module.exports = [
         "date": "2012-07-11"
       },
       {
-        "name": "Not substantial 90 day finding",
+        "name": "Not substantial 90-day finding",
         "url": "http://www.gpo.gov/fdsys/pkg/FR-2015-07-01/pdf/2015-16001.pdf",
         "date": "2015-07-01"
       }
@@ -386,7 +386,7 @@ module.exports = [
         "date": "2012-07-11"
       },
       {
-        "name": "90-day Substantial Finding",
+        "name": "Substantial 90-day Finding",
         "url": "http://www.gpo.gov/fdsys/pkg/FR-2015-07-01/pdf/2015-16001.pdf",
         "date": "2015-07-01"
       }
@@ -408,7 +408,7 @@ module.exports = [
         "date": "2012-07-11"
       },
       {
-        "name": "90-day Substantial Finding",
+        "name": "Substantial 90-day Finding",
         "url": "http://www.gpo.gov/fdsys/pkg/FR-2015-07-01/pdf/2015-16001.pdf",
         "date": "2015-07-01"
       }
