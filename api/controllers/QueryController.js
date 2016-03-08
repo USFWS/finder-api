@@ -90,20 +90,32 @@ module.exports = {
 
   custom: function(req, res) {
     // Grab the parsed query string
-    var params = req.allParams(),
-      supportedParams = ['leadOffice', 'range', 'taxon', 'status'],
+    var Query,
+      params = req.allParams(),
+      supportedParams = ['leadOffice', 'range', 'taxon'],
       query = _.pick(params, supportedParams);
 
     if (params.rangeQueryType === 'all') {
       // Use native MongoDB syntax
-      query.range = { "$all": params.range };
+      query.range = { '$all': params.range };
     }
-    console.log(query);
 
-    Species.find(query).exec(function(err, species) {
+    Query = Species.find(query);
+    if (params.status) Query.where({ 'status.name': params.status });
+    Query.exec(function(err, species) {
+      var filtered = [];
       if (err) return res.serverError(err);
-      res.ok(species);
+
+      if (params.status) {
+        _.each(species, function (animal) {
+          if (StatusService.current(animal) === params.status) {
+            filtered.push(animal);
+          }
+        });
+        res.ok(filtered);
+      } else {
+        res.ok(species);
+      }
     });
   }
 };
-
