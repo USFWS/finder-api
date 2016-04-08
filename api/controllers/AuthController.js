@@ -8,8 +8,9 @@ var google = require('googleapis');
 
 module.exports = {
   google: function(req, res) {
+
     var CLIENT_ID = req.body.clientId,
-      CLIENT_SECRET = process.env.GOOGLE_SECRET,
+      CLIENT_SECRET = sails.config.GOOGLE_SECRET,
       REDIRECT_URI = req.body.redirectUri,
       scopes = ['https://www.googleapis.com/auth/plus.me'],
       plus = google.plus('v1'),
@@ -26,6 +27,7 @@ module.exports = {
 
       plus.people.get({ userId: 'me' }, function (err, profile) {
         if (err) return res.negotiate(err);
+        // if ( profile.domain !== 'fws.gov' ) return res.send(403, 'You must be a U.S. Fish & Wildlife Service Employee to create an account.');
 
         // Find or Create a user account
         User.findOne({ email: profile.emails[0].value }).exec(function(err, foundUser) {
