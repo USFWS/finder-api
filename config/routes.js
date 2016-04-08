@@ -47,8 +47,10 @@ module.exports.routes = {
 
   'GET /health': 'HealthController.checkHealth',
 
+  'GET /query/status': 'QueryController.status',
   'POST /query/custom': 'QueryController.custom',
   'POST /query/endemic': 'QueryController.endemic',
   'POST /query/non-endemic': 'QueryController.nonEndemic',
-  'GET /query/other-region': 'QueryController.otherRegion'
+  'GET /query/other-region': 'QueryController.otherRegion',
+  'GET /listed': 'ListedController.byState'
 };
