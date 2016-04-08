@@ -4,8 +4,6 @@
  * @description :: Server-side logic for managing queries
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  *
- *
- *
  * @notes ::  HARD DEPENENCY ON MONGODB:
  *            This query interface relies on the native mongo adaptor because
  *            SailsJS does not yet support searching nested documents.
@@ -13,12 +11,29 @@
 
 module.exports = {
 
-  endemic: function(req, res) {
-    var state,
-      query;
+  status: function(req, res) {
+    var status = req.param('status');
+    var filtered;
 
-    if (req.param('state')) {
-      state = req.param('state');
+    if (!status) return res.badRequest('You must provide a status');
+
+    Species.find({ 'status.name': status }).exec(function (err, species) {
+      if (err) return res.negotiate(err);
+      // We got the species, now we need to filter based on current status
+      // The Service currently assumes you're passing in a string, not an array
+      // Accepting an array will allow people to query based on several current
+      // statuses instead of running multiple queries
+
+      filtered = StatusService.filterByCurrentStatus(species, status);
+      res.ok(filtered);
+    });
+  },
+
+  endemic: function(req, res) {
+    var state = req.param('state'),
+        query;
+
+    if (state) {
       query = {
         $and: [
           { range: { $size: 1 } },
@@ -41,22 +56,32 @@ module.exports = {
   },
 
   nonEndemic: function(req, res) {
-    var state,
+    var state = req.param('state'),
+      type = req.param('type'),
       query;
 
-    if (req.param('state')) {
-      state = req.param('state');
-      query = {
-        $and: [
-          // Check if more than one item in array with index (as of MongoDB 2.2)
-          { 'range.1': { $exists: true } },
-          { range: state }
-        ]
-      };
-    } else {
-      query = {
-        'range.1': { $exists: true }
-      };
+    // User didn't give a state list, return all species with more than one state in range
+    // Check if more than one item in array with index (as of MongoDB 2.2)
+    if (state.length === 0) query = { 'range.1': { $exists: true } };
+    else {
+      // type = and: Includes all of the supplied states in it's range (where range.length > 1)
+      if (type === 'and') {
+        query = {
+          $and: [
+            { 'range.1': { $exists: true } },
+            { range: { $all: state } }
+          ]
+        };
+      }
+      // type = or: Includes any of the supplied states in it's range (where range.length > 1)
+      if (type === 'or') {
+        query = {
+          $and: [
+            { 'range.1': { $exists: true } },
+            { range: { $in: state } }
+          ]
+        };
+      }
     }
 
     Species.native(function(err, collection) {
@@ -103,15 +128,11 @@ module.exports = {
     Query = Species.find(query);
     if (params.status) Query.where({ 'status.name': params.status });
     Query.exec(function(err, species) {
-      var filtered = [];
+      var filtered;
       if (err) return res.serverError(err);
 
       if (params.status) {
-        _.each(species, function (animal) {
-          if (StatusService.current(animal) === params.status) {
-            filtered.push(animal);
-          }
-        });
+        filtered = StatusService.filterByCurrentStatus(species, params.status);
         res.ok(filtered);
       } else {
         res.ok(species);
