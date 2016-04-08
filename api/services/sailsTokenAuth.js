@@ -12,11 +12,11 @@ module.exports.createToken = function(user) {
     name: user.email
   };
 
-  return jwt.encode(payload, process.env.TOKEN_SECRET);
+  return jwt.encode(payload, sails.config.TOKEN_SECRET);
 };
 
 module.exports.verifyToken = function(token) {
-  return jwt.decode(token, process.env.TOKEN_SECRET);
+  return jwt.decode(token, sails.config.TOKEN_SECRET);
 };
 
 module.exports.decodeToken = function(token) {
