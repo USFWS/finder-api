@@ -10,19 +10,20 @@
     "U.S. Fish and Wildlife Service"
   ],
   "dependencies": {
+    "cheerio": "^0.20.0",
     "dotenv": "^2.0.0",
     "googleapis": "^2.1.6",
     "include-all": "^0.1.6",
     "jwt-simple": "^0.4.1",
     "moment": "^2.10.3",
     "rc": "~1.1.6",
-    "request": "^2.58.0",
+    "request": "^2.69.0",
     "sails": "^0.12.1",
     "sails-mongo": "^0.12.0"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "mocha -R spec -b --recursive -t 5000",
     "coverage": "istanbul cover _mocha -- -u exports -R spec --recursive -t 5000",
     "lint": "jshint api/**/*.js test/**/*.js"
