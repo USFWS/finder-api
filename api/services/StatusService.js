@@ -1,6 +1,29 @@
 var moment = require('moment');
 
 module.exports = {
+
+  filterByCurrentStatus: function (species, status) {
+    var filtered = [];
+
+    if (typeof status === 'string') {
+      _.each(species, function (animal) {
+        if (StatusService.current(animal) === status) {
+          filtered.push(animal);
+        }
+      });
+    } else { // Handles the case where 'status' is an Array
+      _.each(status, function (theStatus) {
+        _.each(species, function (animal) {
+          if (StatusService.current(animal) === theStatus) {
+            filtered.push(animal);
+          }
+        });
+      });
+    }
+
+    return filtered;
+  },
+
   current: function (species) {
     var fakeDate = moment('1990-01-01');
     var currentStatus = {
