@@ -16,6 +16,22 @@ module.exports = {
       unique: true
     },
 
+    adminRegion: {
+      type: 'string',
+      required: true,
+      unique: false,
+      enum: [
+        'Pacific',
+        'Southwest',
+        'Midwest',
+        'Southeast',
+        'Northeast',
+        'Mountain-Prairie',
+        'Alaska',
+        'Pacific Southwest'
+      ]
+    },
+
     street: {
       type: 'string',
       required: true
@@ -38,6 +54,18 @@ module.exports = {
 
     phone: {
       type: 'string'
+    },
+
+    email: {
+      type: 'email'
+    },
+
+    url: {
+      type: 'string'
+    },
+
+    species: {
+      model: 'species'
     }
   }
 };
