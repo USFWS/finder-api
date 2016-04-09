@@ -30,11 +30,6 @@ module.exports = {
       required: true,
       enum: ['viewer', 'editor', 'admin'],
       defaultsTo: 'viewer'
-    },
-
-    history: {
-      collection: 'history',
-      via: 'modifiedBy'
     }
 
   }
