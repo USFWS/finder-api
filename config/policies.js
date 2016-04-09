@@ -39,6 +39,12 @@ module.exports.policies = {
     'update': ['tokenAuth', 'isAdmin'],
     'destroy': ['tokenAuth', 'isAdmin']
     //'canEditProfile' -> Editor can edit their own prof, Admin can edit any prof
+  },
+
+  'OfficeController': {
+    'create': ['tokenAuth', 'canEditOffice'],
+    'update': ['tokenAuth', 'canEditOffice'],
+    'destroy': ['tokenAuth', 'canEditOffice']
   }
 
   /***************************************************************************
