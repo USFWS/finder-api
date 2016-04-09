@@ -47,20 +47,6 @@ module.exports = {
       ]
     },
 
-    region: {
-      type: 'string',
-      enum: [
-        'Pacific',
-        'Southwest',
-        'Midwest',
-        'Southeast',
-        'Northeast',
-        'Mountain-Prairie',
-        'Alaska',
-        'Pacific Southwest'
-      ]
-    },
-
     leadOffice: {
       type: 'string',
       required: true
@@ -77,6 +63,12 @@ module.exports = {
     // Four digit species code in ECOS
     ecos: {
       type: 'string'
+    },
+
+    // A species can be associated with one or more offices
+    office: {
+      collection: 'offices',
+      via: 'species'
     }
 
   }
