@@ -48,8 +48,7 @@ module.exports = {
     },
 
     leadOffice: {
-      type: 'string',
-      required: true
+      type: 'string'
     },
 
     range: {
@@ -66,7 +65,7 @@ module.exports = {
     },
 
     // A species can be associated with one or more offices
-    office: {
+    offices: {
       collection: 'offices',
       via: 'species'
     }

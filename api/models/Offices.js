@@ -64,8 +64,10 @@ module.exports = {
       type: 'string'
     },
 
+    // An office can be associated with one or more species
     species: {
-      model: 'species'
+      collection: 'species',
+      via: 'offices'
     }
   }
 };
