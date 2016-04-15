@@ -114,10 +114,9 @@ module.exports = {
   },
 
   custom: function(req, res) {
-    // Grab the parsed query string
     var Query,
       params = req.allParams(),
-      supportedParams = ['leadOffice', 'range', 'taxon'],
+      supportedParams = ['range', 'taxon'],
       query = _.pick(params, supportedParams);
 
     if (params.rangeQueryType === 'all') {
@@ -125,18 +124,21 @@ module.exports = {
       query.range = { '$all': params.range };
     }
 
-    Query = Species.find(query);
+    Query = Species.find(query).populate('offices');
     if (params.status) Query.where({ 'status.name': params.status });
     Query.exec(function(err, species) {
-      var filtered;
-      if (err) return res.serverError(err);
+      if (err) return res.negotiate(err);
 
-      if (params.status) {
-        filtered = StatusService.filterByCurrentStatus(species, params.status);
-        res.ok(filtered);
-      } else {
-        res.ok(species);
-      }
+      if ( params.status)
+        species = StatusService.filterByCurrentStatus(species, params.status);
+
+      if ( params.offices )
+        species = OfficeService.filterByOffice(species, params.offices);
+
+      if ( params.regions )
+        species = OfficeService.filterByRegion(species, params.regions);
+
+      res.ok(species);
     });
   }
 };
