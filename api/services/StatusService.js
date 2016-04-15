@@ -14,9 +14,7 @@ module.exports = {
     } else { // Handles the case where 'status' is an Array
       _.each(status, function (theStatus) {
         _.each(species, function (animal) {
-          if (StatusService.current(animal) === theStatus) {
-            filtered.push(animal);
-          }
+          if (StatusService.current(animal) === theStatus) filtered.push(animal);
         });
       });
     }
