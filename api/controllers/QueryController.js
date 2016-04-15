@@ -94,23 +94,24 @@ module.exports = {
   },
 
   otherRegion: function(req, res) {
-    var query = {
-      leadOffice: [
-        'Region 1',
-        'Region 2',
-        'Region 3',
-        'Region 5',
-        'Region 6',
-        'Region 7',
-        'Region 8',
-        'Region 9'
-      ]
-    };
+    var offices = [
+      'Pacific',
+      'Southwest',
+      'Midwest',
+      'Northeast',
+      'Mountain-Prairie',
+      'Alaska',
+      'Pacific Southwest',
+      'National'
+    ];
 
-    Species.find(query).exec(function(err, species) {
-      if (err) return res.negotiate(err);
-      res.ok(species);
-    });
+    Species.find()
+      .populate('offices')
+      .exec(function(err, species) {
+        if (err) return res.negotiate(err);
+        species = OfficeService.filterByRegion(species, offices);
+        res.ok(species);
+      });
   },
 
   custom: function(req, res) {
