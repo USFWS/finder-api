@@ -12,8 +12,11 @@ module.exports = {
 
 		var state = req.param('state');
 
-		if (!state) return res.badRequest('You must provide a state abbreviation e.g. \'?state=AL\'');
-		if (state.length > 2) return res.badRequest('State must be provided as a two letter abbreviation e.g. \'AL\'');
+		if (!state) return res.badRequest('You must provide a state e.g. \'?state=AL\' or \'?state=Alabama\'.');
+		if (state.length > 2) {
+			state = StateService.getAbbreviationFromState(state);
+			if (state.length !== 2) return res.badRequest('State must be provided as a two letter abbreviation e.g. \'AL\'');
+		}
 
 	  var $;
 	  var listed = {
