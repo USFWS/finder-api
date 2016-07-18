@@ -20,9 +20,9 @@ module.exports = {
 
 	  var $;
 	  var listed = {
-			'state': state,
-	    'endangered': 0,
-	    'threatened': 0
+			state: state,
+	    endangered: [],
+	    threatened: []
 	  };
 
 	  var options = {
@@ -34,10 +34,23 @@ module.exports = {
 	    }
 	  };
 
-	  function countListedSpecies(i, row) {
+	  function findListedSpecies(i, row) {
 	    var status = $(row).find('td')['0'].children[0].data;
-	    if (status === 'E') listed.endangered += 1;
-	    else if (status === 'T') listed.threatened += 1;
+      var animal = $(row).find('td')['1'].children[0].data;
+
+      // Remove newline character, whtitespace, opening paren at the end of the line
+      var commonName = animal.replace('\n', '').slice(0, -1).trim();
+      var scientificName = $(row).find('i')['0'].children[0].data;
+      var ecosLink = $(row).find('a')['0'].attribs.href;
+
+      var species = {
+        ecos: 'https://ecos.fws.gov' + ecosLink,
+        scientific: scientificName,
+        common: commonName
+      };
+
+	    if (status === 'E') listed.endangered.push(species);
+	    else if (status === 'T') listed.threatened.push(species);
 	  }
 
 	  request(options, function(err, response, body) {
@@ -48,8 +61,8 @@ module.exports = {
 	    var plants = $('table')[1];
 
 			// Pull data out of the animals and plants tables respectively
-	    $(animals).find('tbody').find('tr').each(countListedSpecies);
-	    $(plants).find('tbody').find('tr').each(countListedSpecies);
+	    $(animals).find('tbody').find('tr').each(findListedSpecies);
+	    $(plants).find('tbody').find('tr').each(findListedSpecies);
 
 	    res.send(listed);
 	  });
