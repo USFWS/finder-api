@@ -42,10 +42,7 @@ describe('User model', function() {
         "email": "roy_hewitt@fws.gov",
         "accountType": "batman"
       }).exec(function(err, user) {
-        expect(err.invalidAttributes.accountType).to.include({
-          "rule": 'in',
-          "message": '"in" validation rule failed for input: \'batman\''
-        });
+        expect(err).to.exist;
         expect(user).to.not.exist;
         done();
       });

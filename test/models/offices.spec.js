@@ -15,8 +15,9 @@
 
     it('saves a new record when supplied with required fields', function(done) {
       Offices.create({
+        "adminRegion": "Northeast",
         "name": "Chesapeake Bay Field Office",
-        "street": "173 Admiral Cochrane Drive",
+        "street": "177 Admiral Cochrane Drive",
         "city": "Annapolis",
         "state": "MD",
         "zip": "21401"
@@ -31,8 +32,9 @@
 
       it('if the office name already exists', function (done) {
         Offices.create({
+          "adminRegion": "Northeast",
           "name": "Chesapeake Bay Field Office",
-          "street": "173 Admiral Cochrane Drive",
+          "street": "177 Admiral Cochrane Drive",
           "city": "Annapolis",
           "state": "MD",
           "zip": "21401"
@@ -49,15 +51,13 @@
 
       it('if the office name is not provided', function (done) {
         Offices.create({
-          "street": "173 Admiral Cochrane Drive",
+          "adminRegion": "Northeast",
+          "street": "177 Admiral Cochrane Drive",
           "city": "Annapolis",
           "state": "MD",
           "zip": "21401"
         }, function(err, created) {
-          expect(err.invalidAttributes.name).to.include({
-            rule: 'required',
-            message: '"required" validation rule failed for input: null'
-          });
+          expect(err).to.exist;
           expect(created).to.not.exist;
           done();
         });
@@ -65,15 +65,13 @@
 
       it('if a street is not provided', function (done) {
         Offices.create({
+          "adminRegion": "Northeast",
           "name": "Atlanta Field Office",
           "city": "Atlanta",
           "state": "GA",
           "zip": "30345"
         }, function(err, created) {
-          expect(err.invalidAttributes.street).to.include({
-            rule: 'required',
-            message: '"required" validation rule failed for input: null'
-          });
+          expect(err).to.exist;
           expect(created).to.not.exist;
           done();
         });
@@ -81,15 +79,13 @@
 
       it('if a city is not provided', function (done) {
         Offices.create({
+          "adminRegion": "Northeast",
           "name": "Atlanta Field Office",
           "street": "1875 Century Blvd NE",
           "state": "GA",
           "zip": "30345"
         }, function(err, created) {
-          expect(err.invalidAttributes.city).to.include({
-            rule: 'required',
-            message: '"required" validation rule failed for input: null'
-          });
+          expect(err).to.exist;
           expect(created).to.not.exist;
           done();
         });
@@ -97,15 +93,13 @@
 
       it('if a state is not provided', function (done) {
         Offices.create({
+          "adminRegion": "Northeast",
           "name": "Atlanta Field Office",
           "street": "1875 Century Blvd NE",
           "city": "Atlanta",
           "zip": "30345"
         }, function(err, created) {
-          expect(err.invalidAttributes.state).to.include({
-            rule: 'required',
-            message: '"required" validation rule failed for input: null'
-          });
+          expect(err).to.exist;
           expect(created).to.not.exist;
           done();
         });
@@ -113,15 +107,27 @@
 
       it('if a zip code is not provided', function (done) {
         Offices.create({
+          "adminRegion": "Northeast",
           "name": "Atlanta Field Office",
           "street": "1875 Century Blvd NE",
           "city": "Atlanta",
           "state": "GA"
         }, function(err, created) {
-          expect(err.invalidAttributes.zip).to.include({
-            rule: 'required',
-            message: '"required" validation rule failed for input: null'
-          });
+          expect(err).to.exist;
+          expect(created).to.not.exist;
+          done();
+        });
+      });
+
+      it('if a region is not provided', function (done) {
+        Offices.create({
+          "name": "Atlanta Field Office",
+          "street": "1875 Century Blvd NE",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30345"
+        }, function(err, created) {
+          expect(err).to.exist;
           expect(created).to.not.exist;
           done();
         });

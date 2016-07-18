@@ -46,10 +46,7 @@ describe('Species model', function() {
         "taxon": "Amphibian",
         "leadOffice": "Frankfort",
       }, function(err, created) {
-        expect(err.invalidAttributes.scientificName).to.include({
-          rule: 'required',
-          message: '"required" validation rule failed for input: null'
-        });
+        expect(err).to.exist;
         expect(created).to.not.exist;
         done();
       });
@@ -61,25 +58,7 @@ describe('Species model', function() {
         "commonName": "Streamside salamander",
         "leadOffice": "Frankfort",
       }, function(err, created) {
-        expect(err.invalidAttributes.taxon).to.include({
-          rule: 'required',
-          message: '"required" validation rule failed for input: null'
-        });
-        expect(created).to.not.exist;
-        done();
-      });
-    });
-
-    it('if no lead office is identified', function(done) {
-      Species.create({
-        "scientificName": "Another Fake name",
-        "taxon": "Amphibian",
-        "commonName": "Streamside salamander",
-      }, function(err, created) {
-        expect(err.invalidAttributes.leadOffice).to.include({
-          rule: 'required',
-          message: '"required" validation rule failed for input: null'
-        });
+        expect(err).to.exist;
         expect(created).to.not.exist;
         done();
       });

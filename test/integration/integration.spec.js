@@ -149,7 +149,7 @@
           agent.delete('species/1')
             .set('Authorization', 'Bearer ' + jwt)
             .end(function(err, res) {
-              expect(res.body.message).to.equal('You do not have editing privileges.');
+              expect(res.body.message).to.equal('You must have admin privileges to complete this task.');
               expect(res.statusCode).to.equal(403);
               done();
             });
@@ -222,11 +222,11 @@
             });
         });
 
-        it('should allow user to destroy a species by id', function(done){
+        it('should not allow user to destroy a species by id', function(done){
           agent.delete('species/5')
             .set('Authorization', 'Bearer ' + jwt)
             .end(function(err, res) {
-              expect(res.statusCode).to.equal(200);
+              expect(res.statusCode).to.equal(403);
               done();
             });
         });

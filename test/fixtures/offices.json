@@ -1,5 +1,6 @@
 [
   {
+    "adminRegion": "Southeast",
     "name": "Alabama Ecological Services Field Office",
     "street": "1208 B Main Street",
     "city": "Daphne",
@@ -7,6 +8,7 @@
     "zip": "36526"
   },
   {
+    "adminRegion": "Southeast",
     "name": "Arkansas Ecological Services Field Office",
     "street": "110 South Amity Suite 300",
     "city": "Conway",
@@ -14,6 +16,7 @@
     "zip": "72032"
   },
   {
+    "adminRegion": "Southeast",
     "name": "Asheville Ecological Services Field Office",
     "street": "160 Zillicoa Street",
     "city": "Asheville",
@@ -21,6 +24,7 @@
     "zip": "28801"
   },
   {
+    "adminRegion": "Southeast",
     "name": "Georgia Ecological Services Field Office",
     "street": "105 Westpark Drive, Westpark Center Suite D",
     "city": "Athens",
