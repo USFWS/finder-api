@@ -104,6 +104,7 @@
         before(function(done) {
           // Create an authenticated user w/viewer privileges
           User.create({
+            name: 'bilbo baggins',
             email: 'viewer@gmail.com',
             job: 'tester',
             accountType: 'viewer'
@@ -183,6 +184,7 @@
         before(function(done) {
           // Create an authenticated user w/editor privileges
           User.create({
+            name: 'jimmy key',
             email: 'editor@gmail.com',
             job: 'tester',
             accountType: 'editor'
@@ -259,6 +261,7 @@
         before(function(done) {
           // Create an authenticated user w/admin privileges
           User.create({
+            name: 'donald drumpf',
             email: 'admin@gmail.com',
             job: 'tester',
             accountType: 'admin'

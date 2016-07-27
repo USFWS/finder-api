@@ -2,6 +2,7 @@
   {
     "id": 1,
     "googleId": "111676112618526079050",
+    "name": "Roy Hewitt",
     "email": "roy_hewitt@fws.gov",
     "accountType": "admin",
     "photo": "https://lh6.googleusercontent.com/-v3Z5XZ2x4-4/AAAAAAAAAAI/AAAAAAAAAAA/6vS6DDaQppE/photo.jpg",
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "googleId": "101876441603782187907",
+    "name": "Ronald Hellwig",
     "email": "royhewitt07@gmail.com",
     "accountType": "viewer"
   }

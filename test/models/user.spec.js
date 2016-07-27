@@ -12,6 +12,7 @@ describe('User model', function() {
 
   it('should default to viewer privileges', function(done) {
     User.create({
+      "name": "Chuck bagadompalopous",
       "email": "new_email@fws.gov"
     }).exec(function(err, user) {
       expect(err).to.be.null;
@@ -24,6 +25,7 @@ describe('User model', function() {
 
     it('if email already exists', function(done) {
       User.create({
+        "name": "Vernon davis",
         "email": "roy_hewitt@fws.gov",
         "accountType": "admin"
       }).exec(function(err, user) {
@@ -39,6 +41,7 @@ describe('User model', function() {
 
     it('if bad account type', function(done) {
       User.create({
+        "name": "Wendy webber",
         "email": "roy_hewitt@fws.gov",
         "accountType": "batman"
       }).exec(function(err, user) {
