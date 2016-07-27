@@ -109,6 +109,7 @@
             job: 'tester',
             accountType: 'viewer'
           }).exec(function (err, user) {
+            if (err) console.log(err);
             jwt = sailsTokenAuth.createToken(user);
             done();
           });
