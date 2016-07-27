@@ -12,6 +12,9 @@ module.exports.createToken = function(user) {
     name: user.email
   };
 
+  console.log(sails.config.TOKEN_SECRET);
+  console.log(process.env.TOKEN_SECRET);
+
   return jwt.encode(payload, sails.config.TOKEN_SECRET);
 };
 
