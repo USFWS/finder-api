@@ -1,6 +1,8 @@
 var jwt = require('jwt-simple');
 var moment = require('moment');
 
+var TOKEN_SECRET = sails.config.TOKEN_SECRET || process.env.TOKEN_SECRET;
+
 module.exports.createToken = function(user) {
 
   var payload = {
@@ -12,14 +14,11 @@ module.exports.createToken = function(user) {
     name: user.email
   };
 
-  console.log(sails.config.TOKEN_SECRET);
-  console.log(process.env.TOKEN_SECRET);
-
-  return jwt.encode(payload, sails.config.TOKEN_SECRET);
+  return jwt.encode(payload, TOKEN_SECRET);
 };
 
 module.exports.verifyToken = function(token) {
-  return jwt.decode(token, sails.config.TOKEN_SECRET);
+  return jwt.decode(token, TOKEN_SECRET);
 };
 
 module.exports.decodeToken = function(token) {

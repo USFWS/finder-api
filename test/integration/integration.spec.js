@@ -103,6 +103,7 @@
 
         before(function(done) {
           // Create an authenticated user w/viewer privileges
+
           User.create({
             name: 'bilbo baggins',
             email: 'viewer@gmail.com',
