@@ -100,8 +100,6 @@
       var jwt;
 
       describe('with viewer privileges', function() {
-        
-        console.log(sails.config.TOKEN_SECRET);
 
         before(function(done) {
           // Create an authenticated user w/viewer privileges
