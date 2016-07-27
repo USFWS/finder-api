@@ -22,6 +22,25 @@ module.exports = {
     return filtered;
   },
 
+  filterByStatusOnDate: function (species, matchStatus, date) {
+    var filtered = [],
+        statusIsAfterDate,
+        previousStatus;
+
+    _.each(species, function(animal) {
+      _.each(animal.status, function(status, i, statusList) {
+        // If the status date is after the date provided by the user, grab the previous status
+        statusIsAfterDate = moment(status.date).isAfter(moment(date));
+
+        if (i > 0) previousStatus = statusList[i-1].name;
+        if ( statusIsAfterDate && previousStatus === matchStatus)
+          filtered.push(animal);
+      });
+    });
+
+    return filtered;
+  },
+
   current: function (species) {
     var fakeDate = moment('1990-01-01');
     var currentStatus = {
