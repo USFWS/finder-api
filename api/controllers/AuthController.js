@@ -10,14 +10,12 @@ module.exports = {
   google: function(req, res) {
 
     var CLIENT_ID = req.body.clientId,
-      CLIENT_SECRET = sails.config.GOOGLE_SECRET,
-      REDIRECT_URI = req.body.redirectUri,
-      scopes = ['https://www.googleapis.com/auth/plus.me'],
-      plus = google.plus('v1'),
-      OAuth2 = google.auth.OAuth2;
-
-    var oauth2Client = new OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI),
-      url = oauth2Client.generateAuthUrl({ scope: scopes });
+        CLIENT_SECRET = sails.config.GOOGLE_SECRET,
+        REDIRECT_URI = req.body.redirectUri,
+        scopes = ['profile'],
+        plus = google.plus('v1'),
+        OAuth2 = google.auth.OAuth2,
+        oauth2Client = new OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 
     google.options({ auth: oauth2Client });
 
@@ -38,6 +36,7 @@ module.exports = {
           } else {
 
             var params = {
+              name: profile.displayName,
               email: profile.emails[0].value
             };
 
