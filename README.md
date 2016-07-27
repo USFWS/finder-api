@@ -1,5 +1,7 @@
 # At-Risk Species Finder API
 
+[![Build Status](https://travis-ci.org/USFWS/finder-api.svg?branch=master)](https://travis-ci.org/USFWS/finder-api)
+
 This API replaces the [old At-Risk Species Finder](http://www.fws.gov/southeast/candidateconservation/finder.html) that was created as a Microsoft Access database.  The goal of this API is to make data more widely available and easier to maintain.  By making the data available as a service other organizations can begin to include At-Risk Species information in their own websites.
 
 A front-end application is also being developed for the USFWS Southeast Region's website.  This app will integrate with the API and allow users to explore species data while allowing authorized experts to maintain the data.
