@@ -68,6 +68,12 @@ module.exports = {
     offices: {
       collection: 'offices',
       via: 'species'
+    },
+
+    // A species can be associated with one or more users (lead biologist)
+    experts: {
+      collection: 'user',
+      via: 'species'
     }
 
   }

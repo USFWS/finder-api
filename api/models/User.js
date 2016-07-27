@@ -11,10 +11,19 @@ module.exports = {
 
   attributes: {
 
+    name: {
+      type: 'string',
+      required: true
+    },
+
     email: {
       type: 'string',
       unique: true,
       required: true
+    },
+
+    organization: {
+      type: 'string'
     },
 
     job: {
@@ -30,6 +39,12 @@ module.exports = {
       required: true,
       enum: ['viewer', 'editor', 'admin'],
       defaultsTo: 'viewer'
+    },
+
+    // A user can be associated with one or more species
+    species: {
+      collection: 'species',
+      via: 'experts'
     }
 
   }
