@@ -30,35 +30,37 @@
     "montana": "MT",
     "nebraska": "NE",
     "nevada": "NV",
-    "new Hampshire": "NH",
-    "new Jersey": "NJ",
-    "new Mexico": "NM",
-    "new York": "NY",
-    "north Carolina": "NC",
-    "north Dakota": "ND",
+    "new hampshire": "NH",
+    "new jersey": "NJ",
+    "new mexico": "NM",
+    "new york": "NY",
+    "north carolina": "NC",
+    "north dakota": "ND",
     "ohio": "OH",
     "oklahoma": "OK",
     "oregon": "OR",
     "pennsylvania": "PA",
-    "puerto Rico": "PR",
-    "rhode Island": "RI",
-    "south Carolina": "SC",
-    "south Dakota": "SD",
+    "puerto rico": "PR",
+    "rhode island": "RI",
+    "south carolina": "SC",
+    "south dakota": "SD",
     "tennessee": "TN",
     "texas": "TX",
     "utah": "UT",
     "vermont": "VT",
-    "virgin Islands": "VI",
+    "virgin islands": "VI",
     "virginia": "VA",
     "washington": "WA",
-    "west Virginia": "WV",
+    "west virginia": "WV",
     "wisconsin": "WI",
     "wyoming": "WY"
   };
 
   module.exports = {
     getAbbreviationFromState: function(state) {
-      return states[state.toLowerCase()];
+      var abbreviation = states[state.toLowerCase()];
+      if (abbreviation) return abbreviation;
+      else throw new Error('You did not provide a valid State name.');
     }
   };
 })();

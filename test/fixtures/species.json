@@ -13,9 +13,16 @@
     ],
     "status": [
       {
-        "name": "Petitioned",
-        "date": "Mon Apr 19 2010 20:00:00 GMT-0400 (EDT)"
-      }
+  			"name" : "Petitioned",
+  			"petition" : "Petition to list 53 Amphibians and Reptiles",
+  			"url" : "http://ecos.fws.gov/docs/petitions/92210/662.pdf",
+  			"date" : "2012-07-11"
+  		},
+  		{
+  			"name" : "Substantial 90-day Finding",
+  			"url" : "http://www.gpo.gov/fdsys/pkg/FR-2015-07-01/pdf/2015-16001.pdf",
+  			"date" : "2015-07-01"
+  		}
     ]
   },
   {
@@ -34,9 +41,16 @@
     ],
     "status": [
       {
-        "name": "Petitioned",
-        "date": "Mon Apr 19 2010 20:00:00 GMT-0400 (EDT)"
-      }
+  			"name" : "Petitioned",
+  			"petition" : "Petition to list 53 Amphibians and Reptiles",
+  			"url" : "http://ecos.fws.gov/docs/petitions/92210/662.pdf",
+  			"date" : "2012-07-11"
+  		},
+  		{
+  			"name" : "Not Substantial 90-day Finding",
+  			"url" : "http://www.gpo.gov/fdsys/pkg/FR-2015-07-01/pdf/2015-16001.pdf",
+  			"date" : "2015-07-01"
+  		}
     ]
   },
   {
@@ -53,9 +67,16 @@
     ],
     "status": [
       {
-        "name": "Listed Endangered",
-        "date": "Mon Sep 16 2013 20:00:00 GMT-0400 (EDT)"
-      }
+  			"name" : "Petitioned",
+  			"petition" : "Petition to list 404 Aquatic, Riparian and Wetland Species",
+  			"url" : "http://www.fws.gov/southeast/candidateconservation/pdf/Petition_404Aquatic.pdf",
+  			"date" : "2010-04-20"
+  		},
+  		{
+  			"name" : "Substantial 90-day Finding",
+  			"url" : "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
+  			"date" : "2011-09-27"
+  		}
     ]
   },
   {
@@ -69,9 +90,21 @@
     ],
     "status": [
       {
-        "name": "Listed Endangered",
-        "date": "Wed Oct 23 2013 20:00:00 GMT-0400 (EDT)"
-      }
+  			"name" : "Petitioned",
+  			"petition" : "Petition to list 404 Aquatic, Riparian and Wetland Species",
+  			"url" : "http://www.fws.gov/southeast/candidateconservation/pdf/Petition_404Aquatic.pdf",
+  			"date" : "2010-04-20"
+  		},
+  		{
+  			"name" : "Substantial 90-day Finding",
+  			"url" : "http://www.fws.gov/policy/library/2011/2011-24633.pdf",
+  			"date" : "2011-09-27"
+  		},
+  		{
+  			"name" : "Petition Withdrawn",
+  			"url" : "hhttp://www.fws.gov/southeast/candidateconservation/pdf/withdrawal-14-freshwater-species.pdf",
+  			"date" : "2015-12-17"
+  		}
     ]
   }
 ]
