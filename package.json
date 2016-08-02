@@ -45,6 +45,7 @@
     "mocha": "^3.0.0",
     "nodemon": "^1.9.2",
     "sails-memory": "^0.10.5",
+    "sails-mongo": "^0.12.1",
     "supertest": "^2.0.0"
   }
 }
