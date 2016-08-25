@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Highest Priority—Critically Imperiled",
+    "code": "1",
+    "description": "Highest priority will be given to a species experiencing severe threat levels across a majority of its range, resulting in severe population-level impacts. Species that are critically imperiled and need immediate listing action in order to prevent extinction will be given highest priority."
+  },
+  {
+    "name": "Strong Data Already Available on Status",
+    "code": "2",
+    "description": "Species for which we currently have strong information concerning the species&#39; status will receive next highest priority. We acknowledge that the Act requires that we base our decisions on the best available information at the time we make a determination, and we will continue to adhere to that requirement. Our experience implementing the Act has shown us that high-quality scientific information leads to stronger, more defensible decisions that have increased longevity. Therefore, we will generally place species for which we have particularly strong scientific data supporting a clear decision on status—either a decision that the species warrants listing or does not warrant listing—at a higher priority than species in Bins 3, 4, and 5, discussed below."
+  }
+]
