@@ -59,6 +59,14 @@ module.exports = {
       type: 'array'
     },
 
+    proposedDetermination: {
+      type: 'string'
+    },
+
+    categorization: {
+      type: 'array'
+    },
+
     // Four digit species code in ECOS
     ecos: {
       type: 'string'
