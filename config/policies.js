@@ -29,8 +29,8 @@ module.exports.policies = {
   '*': true,
 
   'SpeciesController': {
-    'create': ['tokenAuth', 'canEditSpecies'],
-    'update': ['tokenAuth', 'canEditSpecies'],
+    'create': ['tokenAuth', 'canEdit'],
+    'update': ['tokenAuth', 'canEdit'],
     'destroy': ['tokenAuth', 'isAdmin']
   },
 
@@ -42,8 +42,14 @@ module.exports.policies = {
   },
 
   'OfficeController': {
-    'create': ['tokenAuth', 'canEditOffice'],
-    'update': ['tokenAuth', 'canEditOffice'],
+    'create': ['tokenAuth', 'canEdit'],
+    'update': ['tokenAuth', 'canEdit'],
+    'destroy': ['tokenAuth', 'isAdmin']
+  },
+
+  'CategoriesController': {
+    'create': ['tokenAuth', 'canEdit'],
+    'update': ['tokenAuth', 'canEdit'],
     'destroy': ['tokenAuth', 'isAdmin']
   }
 
