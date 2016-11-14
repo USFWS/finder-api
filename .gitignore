@@ -19,7 +19,7 @@
 
 config/env
 *.env
-
+yarn.lock
 
 ################################################
 # Local Configuration
