@@ -73,7 +73,7 @@ describe('Categories model', function() {
         expect(err.invalidAttributes.name).to.be.a('array');
         expect(err.invalidAttributes.name).to.include({
           "rule": "string",
-          "message": "`undefined` should be a string (instead of \"null\", which is a object)"
+          "message": "Value should be a string (instead of null, which is an object)"
         });
         expect(created).to.not.exist;
         done();
@@ -88,7 +88,7 @@ describe('Categories model', function() {
         expect(err.invalidAttributes.code).to.be.a('array');
         expect(err.invalidAttributes.code).to.include({
           "rule": "string",
-          "message": "`undefined` should be a string (instead of \"null\", which is a object)"
+          "message": "Value should be a string (instead of null, which is an object)"
         });
         expect(created).to.not.exist;
         done();
@@ -103,7 +103,7 @@ describe('Categories model', function() {
         expect(err.invalidAttributes.description).to.be.a('array');
         expect(err.invalidAttributes.description).to.include({
           "rule": "string",
-          "message": "`undefined` should be a string (instead of \"null\", which is a object)"
+          "message": "Value should be a string (instead of null, which is an object)"
         });
         expect(created).to.not.exist;
         done();
