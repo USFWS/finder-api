@@ -12,7 +12,7 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "googleapis": "^14.2.0",
-    "jwt-simple": "^0.5.0",
+    "jwt-simple": "^0.5.1",
     "moment": "^2.16.0",
     "rc": "~1.1.6",
     "request": "^2.78.0",
