@@ -10,14 +10,14 @@
     "U.S. Fish and Wildlife Service"
   ],
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "googleapis": "^14.2.0",
     "jwt-simple": "^0.5.1",
     "moment": "^2.16.0",
-    "rc": "~1.1.6",
+    "rc": "^1.1.6",
     "request": "^2.78.0",
-    "sails": "^0.12.10",
-    "sails-mongo": "^0.12.1"
+    "sails": "^0.12.11",
+    "sails-mongo": "^0.12.2"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -34,15 +34,15 @@
   "author": "Roy Hewitt",
   "license": "Public Domain",
   "devDependencies": {
-    "barrels": "^1.5.0",
-    "chai": "^3.0.0",
-    "grunt": "^0.4.5",
-    "jshint": "^2.9.1",
-    "jshint-stylish": "^2.0.1",
-    "load-grunt-tasks": "^3.2.0",
-    "mocha": "^3.1.2",
+    "barrels": "^1.6.4",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
-    "sails-memory": "^0.10.5",
-    "supertest": "^2.0.1"
+    "sails-memory": "^0.10.7",
+    "supertest": "^3.0.0"
   }
 }
