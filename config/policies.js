@@ -51,6 +51,12 @@ module.exports.policies = {
     'create': ['tokenAuth', 'canEdit'],
     'update': ['tokenAuth', 'canEdit'],
     'destroy': ['tokenAuth', 'isAdmin']
+  },
+
+  'SpeciesLandsController': {
+    'create': ['tokenAuth', 'canEdit', 'speciesLandDoesntExist'],
+    'update': ['tokenAuth', 'canEdit'],
+    'destroy': ['tokenAuth', 'isAdmin']
   }
 
   /***************************************************************************
