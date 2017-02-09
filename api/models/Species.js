@@ -82,6 +82,13 @@ module.exports = {
     experts: {
       collection: 'user',
       via: 'species'
+    },
+
+    // A species can be associated with one or more public lands
+    lands: {
+      collection: 'lands',
+      via: 'land',
+      through: 'specieslands'
     }
 
   }
