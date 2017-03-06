@@ -15,8 +15,8 @@
     "jwt-simple": "^0.5.1",
     "moment": "^2.16.0",
     "rc": "^1.1.6",
-    "request": "^2.78.0",
-    "sails": "^0.12.11",
+    "request": "2.80.0",
+    "sails": "0.12.12",
     "sails-mongo": "^0.12.2"
   },
   "scripts": {
