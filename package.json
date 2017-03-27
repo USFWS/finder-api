@@ -13,7 +13,7 @@
     "cheerio": "^0.22.0",
     "googleapis": "^14.2.0",
     "jwt-simple": "^0.5.1",
-    "moment": "^2.16.0",
+    "moment": "^2.18.1",
     "rc": "^1.1.6",
     "request": "2.80.0",
     "sails": "0.12.12",
