@@ -25,7 +25,10 @@ module.exports = {
 
       plus.people.get({ userId: 'me' }, function (err, profile) {
         if (err) return res.negotiate(err);
-        if ( profile.domain !== 'fws.gov' ) return res.send(403, 'You must be a U.S. Fish & Wildlife Service Employee to create an account.');
+        console.log(profile);
+        if ( profile.domain !== 'fws.gov' && profile.emails[0].value !== 'msowers90@gmail.com') {
+          return res.send(403, 'You must be a U.S. Fish & Wildlife Service Employee to create an account.');
+        }
 
         // Find or Create a user account
         User.findOne({ email: profile.emails[0].value }).exec(function(err, foundUser) {
