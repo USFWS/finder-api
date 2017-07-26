@@ -23,7 +23,7 @@
     "debug": "node debug app.js",
     "start": "nodemon app.js",
     "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 CONNECTION=localMongo nodemon app.js",
-    "test": "mocha -R spec -b --recursive -t 5000",
+    "test": "mocha -R spec -b --recursive -t 7000",
     "lint": "jshint api/**/*.js test/**/*.js"
   },
   "main": "app.js",
