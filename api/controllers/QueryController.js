@@ -125,7 +125,7 @@ module.exports = {
       query.range = { '$all': params.range };
     }
 
-    Query = Species.find(query).populate('offices');
+    Query = Species.find(query).populate('offices').populate('lands');
     if (params.status) Query.where({ 'status.name': params.status });
     Query.exec(function(err, species) {
       if (err) return res.negotiate(err);
@@ -138,6 +138,9 @@ module.exports = {
 
       if ( params.regions )
         species = OfficeService.filterByRegion(species, params.regions);
+
+      if ( params.lands )
+        species = LandService.filterByLand(species, params.lands);
 
       res.ok(species);
     });
