@@ -11,6 +11,7 @@
   ],
   "dependencies": {
     "cheerio": "^0.22.0",
+    "ejs": "^2.5.7",
     "googleapis": "^14.2.0",
     "jwt-simple": "^0.5.1",
     "moment": "^2.18.1",
@@ -41,7 +42,7 @@
     "jshint-stylish": "^2.2.1",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.3.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.14.1",
     "sails-memory": "^0.10.7",
     "supertest": "^3.0.0"
   }
