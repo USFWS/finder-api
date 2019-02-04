@@ -142,7 +142,13 @@ module.exports = {
       if ( params.lands )
         species = LandService.filterByLand(species, params.lands);
 
-      res.ok(species);
+      if ( params.csv ) {
+        var csv = CSVService.speciesListToCSV(species);
+        res.attachment(CSVService.getFileName());
+        res.end(csv, "UTF-8");
+      } else {
+        res.ok(species);
+      }
     });
   }
 };
