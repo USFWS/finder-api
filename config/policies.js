@@ -30,7 +30,7 @@ module.exports.policies = {
 
   'SpeciesController': {
     'create': ['tokenAuth', 'canEdit'],
-    'update': ['tokenAuth', 'canEdit'],
+    'update': ['tokenAuth', 'isRangeEditor'],
     'destroy': ['tokenAuth', 'isAdmin']
   },
 
