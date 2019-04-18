@@ -37,7 +37,7 @@ module.exports = {
     accountType: {
       type: 'string',
       required: true,
-      enum: ['viewer', 'editor', 'admin'],
+      enum: ['viewer', 'range editor', 'editor', 'admin'],
       defaultsTo: 'viewer'
     },
 
