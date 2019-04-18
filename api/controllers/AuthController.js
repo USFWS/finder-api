@@ -8,7 +8,7 @@ var { google } = require("googleapis");
 var request = require("request");
 
 function isValidEmail(profile) {
-  var partnerEmails = ["msowers90@gmail.com"];
+  var partnerEmails = ["msowers90@gmail.com", "royhewitt07@gmail.com"];
 
   // All USFWS email addresses are OK
   if (profile.hd === "fws.gov") return true;
