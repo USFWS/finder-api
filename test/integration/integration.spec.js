@@ -510,10 +510,7 @@
           it('should allow user to only update a species’ range', function(done){
             agent.put('species/4')
               .set('Authorization', 'Bearer ' + jwt)
-              .send({
-                ...updateSpecies,
-                range: ['Maryland', 'Georgia']
-              })
+              .send(Object.assign(updateSpecies, { range: ['Maryland', 'Georgia'] }))
               .end(function(err, res) {
                 expect(res.body.scientificName).to.equal('Chromolaena frustrata');
                 expect(res.body.range).to.include('Maryland');
