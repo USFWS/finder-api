@@ -447,6 +447,230 @@
 
       });
 
+      describe('with range editor privileges', function() {
+
+        before(function(done) {
+          // Create an authenticated user w/range editor privileges
+          User.create({
+            name: 'CC sabathia',
+            email: 'cc@yankees.com',
+            job: 'starting pitcher',
+            accountType: 'range editor'
+          }).exec(function (err, user) {
+            jwt = sailsTokenAuth.createToken(user);
+            done();
+          });
+        });
+
+        describe('dealing with Species', function() {
+
+          it('should allow user to get list of species', function(done) {
+            agent.get('species')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(res.body).to.be.instanceof(Array);
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should allow user to get species by id', function(done) {
+            agent.get('species/1')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(res.body.id).to.equal(1);
+                expect(res.body.scientificName).to.equal('Ammodramus maritimus macgillivraii');
+                done();
+              });
+          });
+
+          it('should not allow user to create a species', function(done){
+            agent.post('species')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send(newSpecies)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You only have permission to update a species’ range.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should not allow user to destroy a species by id', function(done){
+            agent.delete('species/5')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You must have admin privileges to complete this task.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should allow user to only update a species’ range', function(done){
+            agent.put('species/4')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({
+                ...updateSpecies,
+                range: ['Maryland', 'Georgia']
+              })
+              .end(function(err, res) {
+                expect(res.body.scientificName).to.equal('Chromolaena frustrata');
+                expect(res.body.range).to.include('Maryland');
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should not allow user to change account type', function(done) {
+            agent.put('user/1')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({ "accountType": "admin" })
+              .end(function (err, res) {
+                expect(res.body.message).to.equal('You must have admin privileges to complete this task.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+        });
+
+        describe('dealing with Categories', function() {
+
+          it('should allow the user to get a list of categories', function(done) {
+            agent.get('categories')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body).to.be.a('array');
+                expect(res.body.length).to.equal(2);
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should allow the user to get category by id', function(done) {
+            agent.get('categories/1')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.name).to.equal("Highest Priority—Critically Imperiled");
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should not allow the user to create a category', function(done) {
+            agent.post('categories')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({
+                "name": "test",
+                "code": "test",
+                "description": "test"
+              })
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You only have permission to update a species’ range.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should not allow the user to update a category', function(done) {
+            agent.put('categories/3')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({
+                "name": "Updated name",
+                "code": "test",
+                "description": "test"
+              })
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You only have permission to update a species’ range.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should not allow the user to delete a category', function(done) {
+            agent.delete('categories/2')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You must have admin privileges to complete this task.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+        });
+
+        describe('dealing with Offices', function() {
+
+          it('should allow the user to get a list of offices', function(done) {
+            agent.get('offices')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body).to.be.a('array');
+                expect(res.body.length).to.equal(4);
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should allow the user to get an office by id', function(done) {
+            agent.get('offices/1')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.name).to.equal("Alabama Ecological Services Field Office");
+                expect(res.statusCode).to.equal(200);
+                done();
+              });
+          });
+
+          it('should not allow the user to create an office', function(done) {
+            agent.post('offices')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({
+                "name": "test"
+              })
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You only have permission to update a species’ range.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should allow the user to update an office', function(done) {
+            agent.put('offices/3')
+              .set('Authorization', 'Bearer ' + jwt)
+              .send({
+                "name": "Updated name"
+              })
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You only have permission to update a species’ range.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+          it('should not allow the user to delete a species category', function(done) {
+            agent.delete('offices/2')
+              .set('Authorization', 'Bearer ' + jwt)
+              .end(function(err, res) {
+                expect(err).to.not.exist;
+                expect(res.body.message).to.equal('You must have admin privileges to complete this task.');
+                expect(res.statusCode).to.equal(403);
+                done();
+              });
+          });
+
+        });
+      });
+
       describe('with editor privileges', function() {
 
         before(function(done) {
