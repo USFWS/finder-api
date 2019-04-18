@@ -74,6 +74,11 @@ module.exports = {
       type: "string"
     },
 
+    // Integrated taxonomic information system number; itis.gov
+    itis: {
+      type: "string"
+    },
+
     // A species can be associated with one or more offices
     offices: {
       collection: "offices",
