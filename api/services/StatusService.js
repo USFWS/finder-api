@@ -24,16 +24,16 @@ module.exports = {
 
   filterByStatusOnDate: function (species, matchStatus, date) {
     var filtered = [],
-        statusIsAfterDate,
-        previousStatus;
+      statusIsAfterDate,
+      previousStatus;
 
-    _.each(species, function(animal) {
-      _.each(animal.status, function(status, i, statusList) {
+    _.each(species, function (animal) {
+      _.each(animal.status, function (status, i, statusList) {
         // If the status date is after the date provided by the user, grab the previous status
         statusIsAfterDate = moment(status.date).isAfter(moment(date));
 
-        if (i > 0) previousStatus = statusList[i-1].name;
-        if ( statusIsAfterDate && previousStatus === matchStatus)
+        if (i > 0) previousStatus = statusList[i - 1].name;
+        if (statusIsAfterDate && previousStatus === matchStatus)
           filtered.push(animal);
       });
     });
@@ -41,7 +41,7 @@ module.exports = {
     return filtered;
   },
 
-  current: function (species) {
+  current: function (species, field) {
     var fakeDate = moment('1990-01-01');
     var currentStatus = {
       date: fakeDate
@@ -54,6 +54,6 @@ module.exports = {
     });
 
     if (currentStatus.date === fakeDate) return null;
-    else return currentStatus.name;
+    else return field ? currentStatus[field] : currentStatus.name;
   }
 };
