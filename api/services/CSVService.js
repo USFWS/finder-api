@@ -11,12 +11,13 @@
       taxon: species.taxon,
       range: species.range.join(', '),
       leadOffice: species.leadOffice,
-      currentStatus: StatusService.current(species)
+      currentStatus: StatusService.current(species),
+      statusDate: StatusService.current(species, 'date')
     }
   }
 
   module.exports.speciesListToCSV = function (species) {
-    var fields = ['id', 'scientificName', 'commonName', 'taxon', 'range', 'leadOffice', 'currentStatus'];
+    var fields = ['id', 'scientificName', 'commonName', 'taxon', 'range', 'leadOffice', 'currentStatus', 'statusDate'];
     var data = species.map(normalizeDataForCSV);
     try {
       var csv = json2csv(data, { fields: fields });
@@ -29,8 +30,8 @@
   module.exports.getFileName = function () {
     var now = new Date();
     return "at-risk-species-finder-custom-query" + now
-        .toISOString()
-        .slice(0, 10);
+      .toISOString()
+      .slice(0, 10);
   }
 
 })();
